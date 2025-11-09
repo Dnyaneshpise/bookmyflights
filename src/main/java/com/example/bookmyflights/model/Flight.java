@@ -15,15 +15,15 @@ public class Flight {
 
     public Flight() {}
 
-    public Flight(String airline, String destination) {
-        this.airline = airline;
-        this.destination = destination;
-    }
+    // public Flight(String airline, String destination) {
+    //     this.airline = airline;
+    //     this.destination = destination;
+    // }
 
-    // Getters and setters
-    public Long getId() { return id; }
-    public String getAirline() { return airline; }
-    public String getDestination() { return destination; }
-    public void setAirline(String airline) { this.airline = airline; }
-    public void setDestination(String destination) { this.destination = destination; }
+    // // Getters and setters
+    // public Long getId() { return id; }
+    // public String getAirline() { return airline; }
+    // public String getDestination() { return destination; }
+    // public void setAirline(String airline) { this.airline = airline; }
+    // public void setDestination(String destination) { this.destination = destination; }
 }
