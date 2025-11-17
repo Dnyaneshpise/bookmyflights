@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: bmf-postgres
+    environment:
+      POSTGRES_DB: bookmyflights
+      POSTGRES_USER: bookuser
+      POSTGRES_PASSWORD: Book@123
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    image: bookmyflights-backend:dev
+    container_name: bmf-backend
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/bookmyflights
+      SPRING_DATASOURCE_USERNAME: bookuser
+      SPRING_DATASOURCE_PASSWORD: Book@123
+    ports:
+      - "8080:8080"
+
+volumes:
+  db_data:
